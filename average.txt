@@ -1,0 +1,9 @@
+tom 69
+tom 80
+tom 87
+jary 89
+jary 67
+jary 82
+rose 23
+rose 26
+rose 99
