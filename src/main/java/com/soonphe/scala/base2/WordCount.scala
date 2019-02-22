@@ -1,17 +1,14 @@
-package com.connxun
+package com.soonphe.scala.base2
 
 import scala.io.Source
 
 /**
-  * 读文件
-  */
-object ReadFile {
+ * @Author：soonphe
+ * @Date：2019-02-22 13:12
+ * @Description：单词统计
+ */
+object WordCount {
   def main(args: Array[String]): Unit = {
-    println("读文件")
-    val lines = Source.fromFile("d:/n.txt")("UTF-8").getLines()
-    lines.foreach {
-      println _
-    }
 
     //统计wordcount
     val list = Source.fromFile("d:/words.txt").getLines().toList //一次读一行
@@ -27,15 +24,16 @@ object ReadFile {
     //      .mapValues{ _.map{ _._2 }.reduce{ _+_ } }
     //
     //结果保存到文件中
-//    val out = new java.io.PrintWriter("c:/result.txt")
-//    lines.foreach {
-//      out.println(_)
-//    }
-//    out.close
+    //    val out = new java.io.PrintWriter("c:/result.txt")
+    //    lines.foreach {
+    //      out.println(_)
+    //    }
+    //    out.close
+
   }
 
   /**
-    * 单词统计
+    * 单词统计步骤解析
     */
   def wordCount(): Unit = {
     val lines = List("hello tom hello jerry", "hello jerry", "hello kitty")
@@ -57,3 +55,4 @@ object ReadFile {
     lines.flatMap(_.split(" ")).map((_, 1)).groupBy(_._1).map(t => (t._1, t._2.size)).toList.sortBy(_._2).reverse
   }
 }
+

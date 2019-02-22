@@ -1,9 +1,11 @@
-package com.connxun
+package com.soonphe.scala.base2
 
 /**
-  * par多线程并发
-  */
-object TestList {
+ * @Author：soonphe
+ * @Date：2019-02-22 13:15
+ * @Description：par多线程并发
+ */
+object ParConcurrent {
   def main(args: Array[String]): Unit = {
     val startTime = System.currentTimeMillis(); //开始毫秒数
     println(startTime)
@@ -33,17 +35,21 @@ object TestList {
     * )
     */
   val m = List(("北京", 1), ("上海", 3), ("天津", 2), ("北京", 2), ("北京", 1), ("上海", 4), ("北京", 2))
-  m.groupBy { x => x._1 } //x是Tuple类型：(String,Int)
+  m.groupBy { x => x._1 } //x是Tuple类型：(String,Int)  ,这里安装key进行分组
 
   /**
     *   * mapValues值映射——对map集合中的值做映射
     */
   val list = List(("北京",1),("上海",2),("北京",9),("广州",1))
-  val map = list.groupBy( x => x._1)  //以key分组，返回一个map对象，结果为：Map(上海 -> List((上海,2)), 北京 -> List((北京,1), (北京,9)), 广州 -> List((广州,1)))
+  //这里的x为list中的每个对下的形参
+  //以key分组，返回一个map对象，结果为：Map(上海 -> List((上海,2)), 北京 -> List((北京,1), (北京,9)), 广州 -> List((广州,1)))
+  val map = list.groupBy( x => x._1)
   println(map)
   //只获取tuple中的值——注：list没有mapValues方法，map才有
   //mapValues：对map所有的value施加一个map函数，返回一个新的map
-  map.mapValues( list => list.map(x => x._2) )  //只获取value对象，结果为：Map(上海 -> List(2), 北京 -> List(1, 9), 广州 -> List(1))
+  //注: 这里的list只是map中每一个对象中的list形参，不是上面的list
+  //只获取value对象，结果为：Map(上海 -> List(2), 北京 -> List(1, 9), 广州 -> List(1))
+  map.mapValues( list => list.map(x => x._2) )
   //按各个key，将list中的值进行累加
   map.mapValues( list => list.map(x => x._2).reduce((x,y) => x+y))  //这里的reduce对集合做规约操作
 

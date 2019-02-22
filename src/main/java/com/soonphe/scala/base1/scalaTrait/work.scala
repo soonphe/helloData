@@ -1,9 +1,10 @@
-package com.connxun
+package com.soonphe.scala.base1.scalaTrait
 
 /**
-  * Trait(特征)：相当于Java接口
-  * 使用Trait可以实现多继承
-  */
+ * @Author：soonphe
+ * @Date：2019-02-22 13:25
+ * @Description：Trait(特征)：相当于Java接口，使用Trait可以实现多继承
+ */
 trait work {
   def todo()    //抽象方法，待子类实现
   def doing(){
@@ -28,7 +29,7 @@ object test{
     val list = Array(1,2,3,4,5)
     list.foreach { x => println(x) }		//正常写法
     list.foreach {println(_)}	//简写，下划线可以想象成是一个填空，把x一个一个填过来
-    println(list.reduce{ (x,y) => x+y })
+    println(list.reduce{ (x,y) => x+y })  //等于list.sum
     println(list.reduce{ _+_ })
 
     println()

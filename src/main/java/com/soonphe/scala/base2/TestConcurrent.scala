@@ -1,4 +1,4 @@
-package com.connxun
+package com.soonphe.scala.base2
 
 import scala.concurrent.duration.Duration
 import scala.concurrent.{Await, Future}

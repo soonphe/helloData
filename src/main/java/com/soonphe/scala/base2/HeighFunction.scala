@@ -1,6 +1,4 @@
-package com.connxun
-
-import com.connxun.HeighFunction.sumCurrying
+package com.soonphe.scala.base2
 
 ;
 

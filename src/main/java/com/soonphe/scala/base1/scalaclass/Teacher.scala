@@ -1,4 +1,4 @@
-package com.connxun
+package com.soonphe.scala.base1.scalaclass
 
 /**
   * 样例类实现了序列化，同时默认实现了很多方法，例如toString、equals、hashCode等方法

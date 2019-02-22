@@ -1,9 +1,10 @@
-package com.connxun
+package com.soonphe.scala.base1.scalaclass
 
 /**
-  * Class类，这里的val相当于声明的成员变量
-  * @param name
-  */
+ * @Author：soonphe
+ * @Date：2019-02-22 11:36
+ * @Description：Class类，这里的val相当于声明的成员变量
+ */
 class Person(val name: String){
 
   def getName(): Unit={

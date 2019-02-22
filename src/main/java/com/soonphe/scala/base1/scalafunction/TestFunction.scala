@@ -1,4 +1,4 @@
-package com.connxun
+package com.soonphe.scala.base1.scalafunction
 
 /**
   * 函数式编程
@@ -7,15 +7,18 @@ package com.connxun
   */
 class TestFunction {
 
-  def fn(name:String){ println(name) }
-  val f = fn _	//fn _就代表fn函数的原型
+  def fn(name: String) {
+    println(name)
+  }
+
+  val f = fn _ //fn _就代表fn函数的原型
 
   f("Spark")
   fn("Spark")
   fn("Scala")
 
   // 返回值是函数——定义方法，方法体是一个函数
-  def fn2(msg1:String)=(msg2:String)=>println(msg1+" "+msg2)
+  def fn2(msg1: String) = (msg2: String) => println(msg1 + " " + msg2)
 
   val f2 = fn2("you're")
   f2("good")
@@ -36,6 +39,4 @@ object TestFunction {
       n % 2 != 0
     }))
   }
-
-
 }
